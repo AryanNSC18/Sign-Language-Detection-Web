@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Adv</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+
+    <div class="cursor"></div>
+    <section class="main">
+      <h1 class="matit">Advance Tranied ML Model</h1>
+    </section>
+    <div class="img"><img class="img" src="{{ url_for('adv_video') }}" width="50%"/> </div>
+       <div>
+            <form method="post" action="/">
+                <input class="btn2" type="submit" value="Capture-Message" name="new_action1"/>
+                <input class="btn" type="submit" value="Erase-message" name="new_action2"/>
+                <input class="btn3" type="submit" value="Back" name="new_action3"/>
+            </form>
+        </div>
+    <script type="text/javascript">
+    const cursor = document.querySelector(".cursor");
+    var timeout;
+    document.addEventListener("mousemove", (e) => {
+      let x = e.pageX;
+      let y = e.pageY;
+
+      cursor.style.top = y + "px";
+      cursor.style.left = x + "px";
+      cursor.style.display = "block";
+
+      //cursor effects when mouse stopped
+      function mouseStopped(){
+        cursor.style.display = "none";
+      }
+      clearTimeout(timeout);
+      timeout = setTimeout(mouseStopped, 1000);
+    });
+
+    //cursor effects when mouseout
+    document.addEventListener("mouseout", () => {
+      cursor.style.display = "none";
+    });
+    </script>
+
+  </body>
+</html>
