@@ -1,0 +1,7 @@
+mediapipe
+pickle
+numpy
+Flask
+os
+opencv-python
+sklearn2
